@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            li {list-style:none}
+        </style>
+    </head>
+    <body>
+        <h2>Login</h2>
+        <fieldset>
+            <form method="post" action="/login">
+                <li>ID : <input type = "text" value = "" name = "id"/></li>
+                <br/>
+                <li>PW : <input type = "password" value = "" name = "pwd"/></li>
+                <br/>
+                <button type = "submit">login</button>
+            </form>
+        </fieldset>
+        <h2>Register</h2>
+        <fieldset>
+            <form method="post" action="/register">
+                <li>ID : <input type = "text" value = "" name = "id"/></li>
+                <br/>
+                <li>PW : <input type = "password" value = "" name = "pwd"/></li>
+                <br/>
+                <button type = "submit">register</button>
+            </form>
+        </fieldset>
+        <h2>Find ID</h2>
+        <fieldset>
+            <form method="post" action="/findid">
+                <li>PW : <input type = "password" value = "" name = "pwd"/></li>
+                <br/>
+                <button type = "submit">findid</button>
+            </form>
+        </fieldset>
+       <h2>Find PW</h2>
+        <fieldset>
+            <form method="post" action="/findpw">
+                <li>ID : <input type = "text" value = "" name = "id"/></li>
+                <br/>
+                <button type = "submit">findpw</button>
+            </form>
+        </fieldset>
+    </body>
+    <script>
+    window.onload = function(){
+    var a;    
+    var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function (event){ if(xhr.readyState == 4 && xhr.status == 200) {
+        }};
+        xhr.open("POST", "/conect",false); xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); xhr.send('id=admin&password=1234');
+    }
+    </script>
+</html>
